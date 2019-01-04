@@ -1,3 +1,5 @@
+/*global brain */ 
+
 /* If you're feeling fancy you can add interactivity 
     to your site with Javascript */
 
@@ -24,3 +26,5 @@ console.log(net.run([0, 0]));
 console.log(net.run([0, 1]));
 console.log(net.run([1, 0]));
 console.log(net.run([1, 1]));
+
+console.log([1, 2, 3, 4]); 

@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.rawgit.com/BrainJS/brain.js/45ce6ffc/browser.js"></script>
-    <script src="index.pack.js"></script>
+    <!--
+      <script src="index.pack.js"></script>
+    -->
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
     
@@ -19,10 +21,53 @@
     <p>
       I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
     </p>
-
+    <br> 
+    <div id="log">
+       
+    </div>
+    
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
+    
+    <script> 
+      var log = document.querySelector('#log');
+
+      ['log','debug','info','warn','error'].forEach(function (verb) {
+        console[verb] = (function (method, verb, log) {
+            return function () {
+                method.apply(console, arguments);
+                var msg = document.createElement('div');
+                msg.classList.add(verb);
+                //msg.textContent = verb + ': ' + Array.slice.call(arguments).join(' ');
+                msg.textContent = verb + ': ' + argumentsForPrint(arguments);
+                log.append(msg);
+            };
+        })(console[verb], verb, log);
+
+
+      // thanks to https://googlechrome.github.io/samples/font-face-set/
+      function argumentsForPrint(arguments) { 
+        
+        var alist = Array.prototype.slice.call(arguments);
+        if (alist.length == 1 && typeof arguments[0] !== "string") {
+          // this should really work, but doesn't! 
+          //return JSON.stringify(arguments[0], null, 4); 
+          //
+          // real hack! May work only for FontFace object
+          // where return JSON.stringify(arguments, null, 4); 
+          //
+          alist = ["\n"];
+          fontFace = arguments[0];
+          for (var property in fontFace) {
+            alist.push ('  ' + property + ': ' + fontFace[property] + "\n"); 
+          }
+        }
+        return alist.join(' ');  
+      }
+    });
+      
+    </script>
   </body>
 </html>
