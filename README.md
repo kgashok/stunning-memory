@@ -1,3 +1,13 @@
+Explore Brain.js on Glitch 
+=================
+
+## Brain.js 
+- Try this crash course on Brain.js, the JavaScript machine learning tool for creating your own neural networks (8 minute read): [https://medium.freecodecamp.org/ea801f378041](https://medium.freecodecamp.org/ea801f378041)
+
+- The actual interactive course - [https://scrimba.com/p/pVZJQfg/cagZeTW](https://scrimba.com/p/pVZJQfg/cagZeTW)
+
+---
+
 Welcome to Glitch
 =================
 
