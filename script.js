@@ -27,9 +27,9 @@ net.train(trainingData, {
         logPeriod: 100
       });
 
-console.log(net.run([0, 0]));
-console.log(net.run([0, 1]));
-console.log(net.run([1, 0]));
-console.log(net.run([1, 1]));
+console.log("XOR value for [0,0]", net.run([0, 0])); // 0
+console.log("XOR value for [0,1]", net.run([0, 1])); // 1
+console.log("XOR value for [1,0]", net.run([1, 0])); // 1
+console.log("XOR value for [1,1]", net.run([1, 1])); // 0
 
-console.log([1, 2, 3, 4]); 
+//console.log([1, 2, 3, 4]); 
