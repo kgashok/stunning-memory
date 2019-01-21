@@ -1,5 +1,7 @@
 'use strict'; 
 
+// the HTML element in the DOM where the console 
+// output is being re-directed to
 var log = document.querySelector('#log');
 
 ['log','debug','info','warn','error'].forEach(function (verb) {
@@ -8,7 +10,6 @@ var log = document.querySelector('#log');
       method.apply(console, arguments);
       var msg = document.createElement('div');
       msg.classList.add(verb);
-      //msg.textContent = verb + ': ' + Array.slice.call(arguments).join(' ');
       msg.textContent = verb + ': ' + argumentsForPrint(arguments);
       log.prepend(msg);
     };

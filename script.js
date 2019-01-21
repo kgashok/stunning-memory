@@ -6,7 +6,7 @@
     to your site with Javascript */
 
 // prints "hi" in the browser's dev tools console
-console.log('hi');
+console.log('Exploring BrainJS');
 
 // input 0 0, output 0
 // input 0 1, output 1
