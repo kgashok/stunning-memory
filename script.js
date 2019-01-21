@@ -24,7 +24,7 @@ const trainingData = [
 
 net.train(trainingData, {
         log: (error) => console.log(error), 
-        logPeroid: 10
+        logPeriod: 100
       });
 
 console.log(net.run([0, 0]));
